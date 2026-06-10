@@ -112,6 +112,7 @@ footer{
     <a href="#inicio">Inicio</a>
     <a href="#caracteristicas">Características</a>
     <a href="#beneficios">Beneficios</a>
+    <a href="#calculadora">Calculadora</a>
     <a href="catalogo.html">Catálogo</a>
     <a href="#galeria">Galería</a>
     <a href="#contacto">Contacto</a>
@@ -150,7 +151,24 @@ footer{
 
     </div>
 </section>
+<section id="calculadora">
+    <h2>Calculadora Solar</h2>
 
+    <div class="card" style="margin:auto; max-width:500px; text-align:center;">
+        <p>¿Cuántas horas pasas fuera de casa?</p>
+
+        <input type="number" id="horas" placeholder="Ejemplo: 8"
+        style="padding:10px; width:80%; margin:15px;">
+
+        <br>
+
+        <button onclick="calcularModelo()" class="btn">
+            Calcular
+        </button>
+
+        <h3 id="resultado" style="margin-top:20px;"></h3>
+    </div>
+</section>
 <section id="beneficios">
     <h2>Beneficios</h2>
 
@@ -268,6 +286,28 @@ WhatsApp
 <footer>
     <p>© 2026 SolarCharge | Proyecto Escolar de Preparatoria TEVAEV</p>
 </footer>
+<script>
+
+function calcularModelo(){
+
+let horas = document.getElementById("horas").value;
+let resultado = document.getElementById("resultado");
+
+if(horas <= 4){
+resultado.innerHTML = "🔋 Te recomendamos SolarCharge Mini";
+}
+
+else if(horas <= 8){
+resultado.innerHTML = "☀️ Te recomendamos SolarCharge Pro";
+}
+
+else{
+resultado.innerHTML = "⚡ Te recomendamos SolarCharge Max";
+}
+
+}
+
+</script>
 
 </body>
 </html>
